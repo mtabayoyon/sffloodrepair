@@ -90,11 +90,10 @@ if(cf){
         throw new Error('failed');
       }
     }).catch(function(){
-      var name = (formData.get('first_name')||'') + ' ' + (formData.get('last_name')||'');
-      var subject = encodeURIComponent('New Service Request — ' + name.trim());
-      var body = encodeURIComponent('Name: '+name+'\nPhone: '+(formData.get('phone')||'')+'\nAddress: '+(formData.get('address')||'')+'\nService: '+(formData.get('service')||'')+'\nDescription: '+(formData.get('description')||''));
-      window.location.href = 'mailto:dispatch@teamallied.co?subject='+subject+'&body='+body;
-      setTimeout(function(){ btn.textContent=originalText; btn.disabled=false; btn.style.background=''; }, 3000);
+      btn.textContent = 'Submission failed — please call (415) 529-5637';
+      btn.style.background = 'var(--red)';
+      btn.disabled = false;
+      setTimeout(function(){ btn.textContent=originalText; btn.style.background=''; }, 5000);
     });
   });
 }
