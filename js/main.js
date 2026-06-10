@@ -79,7 +79,7 @@ if(cf){
     btn.textContent = 'Sending...';
     btn.disabled = true;
     var formData = new FormData(cf);
-    fetch('https://formspree.io/f/xpwzgvqk',{
+    fetch('https://formspree.io/f/mkoazalp',{
       method:'POST', body:formData, headers:{'Accept':'application/json'}
     }).then(function(r){
       if(r.ok){
