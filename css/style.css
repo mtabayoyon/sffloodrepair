@@ -280,3 +280,9 @@ tr:nth-child(even) td { background:var(--g50) }
   .fb2{flex-direction:column;text-align:center}
   .content ul.check{grid-template-columns:1fr}
 }
+
+/* Photo hero responsive */
+@media(max-width:640px){
+  section.hero img{object-position:60% center !important}
+  .photo-grid-3{grid-template-columns:1fr !important}
+}
