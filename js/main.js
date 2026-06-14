@@ -97,3 +97,36 @@ if(cf){
     });
   });
 }
+
+
+// Lead form submission
+document.querySelectorAll('.lead-form').forEach(form => {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('.lf-submit');
+    const success = form.querySelector('.lf-success');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const data = new FormData(form);
+      await fetch('https://formspree.io/f/xpwzgbjq', {method:'POST',body:data,headers:{'Accept':'application/json'}});
+      form.querySelector('.lf-grid').style.display = 'none';
+      if(success){ success.style.display='block'; }
+    } catch(err) {
+      btn.textContent = 'Submit Assessment Request';
+      btn.disabled = false;
+    }
+  });
+});
+
+// Sticky bar show/hide on scroll
+(function(){
+  var bar = document.querySelector('.stc');
+  if(!bar) return;
+  var hero = document.querySelector('.hero, section');
+  if(!hero) return;
+  window.addEventListener('scroll', function(){
+    var heroBottom = hero.offsetTop + hero.offsetHeight;
+    bar.style.display = window.scrollY > heroBottom ? 'block' : 'none';
+  }, {passive:true});
+})();
