@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Allied Restoration">
+<rect width="64" height="64" rx="12" fill="#003262"/>
+<path d="M32 13 L50 51 L41.5 51 L37.8 42.5 L26.2 42.5 L22.5 51 L14 51 Z M29.2 35.8 L34.8 35.8 L32 28.6 Z" fill="#ffffff"/>
+<rect x="27.5" y="46.5" width="9" height="3.2" fill="#FF0000"/>
+</svg>
