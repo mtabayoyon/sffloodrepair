@@ -50,6 +50,8 @@ all_pages.append(('', 'Allied Restoration — San Francisco Flood Repair', True)
 # ── sitemap.xml: canonical pages only ─────────────────────────────────────────
 def priority(slug):
     if slug == '': return '1.0'
+    if slug=='field-guides' or slug=='field-guide-bay-area-damage-report': return '0.8'
+    if slug.startswith('field-guide'): return '0.7'
     if any(x in slug for x in ['water-damage-repair-in-san-francisco','mold-remediation-clean-up','fire-smoke-clean-up','raw-sewage-clean-up','emergency-water-damage','commercial-restoration-services','commercial-water-damage','commercial-fire-damage','large-loss-restoration','restoration-services-','water-damage-restoration-near-me']): return '0.9'
     if any(x in slug for x in ['water-damage-','mold-remediation-','commercial-','fire-damage-','how-to-','cost']): return '0.8'
     return '0.6'
