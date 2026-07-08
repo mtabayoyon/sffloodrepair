@@ -52,4 +52,21 @@ gtag('config', 'G-H898FKM5EC');gtag('config', 'G-CW3HJJKETK');
 </div><div class="fb2"><p>© 2026 Allied Restoration Company.</p></div></footer>
 <div class="stc"><a href="tel:+14155295637">🚨 (415) 529-5637 — 24/7</a></div>
 <script src="../../js/main.js"></script>
+<div id="arc-mobilebar" class="arc-mbar">
+<a href="tel:+14155295637" class="arc-mbar-btn arc-mbar-call" onclick="if(window.gtag)gtag('event','mobile_bar_call');">
+<span class="arc-mbar-ic">📞</span><span class="arc-mbar-tx">Call Now</span></a>
+<a href="sms:+15417295899" class="arc-mbar-btn arc-mbar-text" onclick="if(window.gtag)gtag('event','mobile_bar_text');">
+<span class="arc-mbar-ic">💬</span><span class="arc-mbar-tx">Text Us</span></a>
+</div>
+<style>
+.arc-mbar{display:none}
+@media(max-width:768px){
+.arc-mbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:9999;box-shadow:0 -2px 12px rgba(0,0,0,.18)}
+.arc-mbar-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 8px;text-decoration:none;font-family:'Barlow Condensed','Bahnschrift',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.arc-mbar-call{background:#FF0000;color:#fff}
+.arc-mbar-text{background:#003262;color:#fff}
+.arc-mbar-ic{font-size:20px}
+body{padding-bottom:56px!important}
+}
+</style>
 </body></html>
