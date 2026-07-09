@@ -172,9 +172,18 @@ details ul{padding-left:18px;font-size:.92rem;color:#333c4a;display:flex;flex-di
 .mission h3{font-size:1.7rem;text-transform:uppercase;margin-bottom:8px}
 .mission p{color:#DCE3EC;font-size:1.08rem}
 
+/* full-bleed photo band */
+.photo-band{position:relative;margin-top:72px}
+.photo-band img{width:100%;height:clamp(260px,44vw,460px);object-fit:cover;object-position:center 35%}
+.band-caption{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(14,27,44,.82));padding:60px 20px 22px;text-align:center}
+.band-caption span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(1.3rem,3.4vw,2rem);text-transform:uppercase;letter-spacing:.05em;color:#fff}
+
 /* gallery */
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .gal img{width:100%;height:200px;object-fit:cover;border-radius:8px}
+@media(min-width:761px){
+  .gal img:first-child{grid-column:span 2;grid-row:span 2;height:100%}
+}
 
 /* join + emergency */
 .join{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
@@ -501,7 +510,14 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:6px}
       </article>
 
     </div>
+  </div>
 
+  <div class="photo-band">
+    <img loading="lazy" src="https://www.sanfranciscofloodrepair.com/images/team-flag-group.jpg" alt="The full Allied Restoration team in front of the American flag">
+    <div class="band-caption"><span>One team. Four Bay Area offices. On call 24/7/365.</span></div>
+  </div>
+
+  <div class="wrap">
     <div class="sec-head" style="margin-top:64px">
       <div class="eyebrow">In the Field</div>
       <h2>Field Crew &amp; Equipment</h2>
