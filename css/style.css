@@ -341,7 +341,7 @@ tr:nth-child(even) td{background:var(--g50)}
 
 
 .eb{position:relative}
-.eb-social{display:inline-flex;gap:8px;margin-left:16px;vertical-align:middle}
-.eb-social a{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(255,255,255,.18);border-radius:4px;color:#fff;text-decoration:none;font-size:11px;font-weight:700;line-height:1;transition:background .2s}
-.eb-social a:hover{background:rgba(255,255,255,.35)}
+.eb-social{display:inline-flex;gap:14px;margin-left:22px;vertical-align:middle}
+.eb-social a{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s,transform .15s}
+.eb-social a:hover{opacity:1;transform:translateY(-2px)}
 @media(max-width:600px){.eb-social{display:none}}
