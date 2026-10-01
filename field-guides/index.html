@@ -70,11 +70,21 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style id="a11y-fixes">
+/* Visible keyboard focus indicators (WCAG 2.4.7) */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid #005fcc;outline-offset:2px;border-radius:2px}
+/* Skip to content link (WCAG 2.4.1) */
+.a11y-skip{position:absolute;left:-9999px;top:0;z-index:100000;background:#003262;color:#fff;padding:12px 20px;font-weight:700;text-decoration:none;border-radius:0 0 6px 0}
+.a11y-skip:focus{left:0}
+/* Accessible visually-hidden labels */
+.a11y-vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
 </head>
 <body class="fg">
+<a href="#main-content" class="a11y-skip">Skip to main content</a>
 <div class="eb">🚨 Emergency? Call Now: <a href="tel:+14155295637">(415) 529-5637</a> — 24/7</div>
 <header class="sh"><div class="hi"><a href="../index.html" class="logo"><img src="../images/allied-logo.svg" alt="Allied Restoration Company" style="height:44px;width:auto" loading="lazy" decoding="async"></a><nav class="mn" id="mn"><a href="../">Home</a><a href="../water-damage-repair-in-san-francisco/">Water Damage</a><a href="../mold-remediation-clean-up-san-francisco/">Mold</a><a href="../fire-smoke-clean-up-san-francisco/">Fire Damage</a><a href="../commercial-restoration-services/">Commercial</a><a href="../field-guides/">Field Guides</a><a href="../contact/" class="nc">📞 Emergency Call</a></nav><button class="nt" id="nt" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
-<main>
+<main id="main-content" tabindex="-1">
 <section class="fg-hero"><div class="wrap">
 <div class="fg-eyebrow">Allied Restoration · Knowledge Base</div>
 <h1>Field Guides</h1>
@@ -84,7 +94,7 @@
 <section class="fg-body"><div class="wrap">
 <div class="gh-grid"><a class="guide-card" href="../field-guide-fire-smoke-remediation/"><div class="gc-thumb" style="background:linear-gradient(135deg,#8B1A0A,#c4260f)"><svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true"><path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-9z" fill="#fff"/></svg></div>
 <div class="gc-num">01</div>
-<div class="gc-tag" style="color:#E8A317">Fire Science</div>
+<div class="gc-tag" style="color:#996A00">Fire Science</div>
 <h3>Fire & Smoke Remediation</h3>
 <p>How fire damage really spreads — the three layers, soot types, and odor science behind a clean recovery.</p>
 <span class="gc-read">Read guide →</span>
@@ -138,7 +148,7 @@
 <span class="gc-read">Read guide →</span>
 </a><a class="guide-card" href="../field-guide-drying-science/"><div class="gc-thumb" style="background:linear-gradient(135deg,#147D74,#0d5a53)"><svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true"><path d="M12 2c0 4-6 8-6 13a6 6 0 0 0 12 0c0-5-6-9-6-13z" fill="#fff"/></svg></div>
 <div class="gc-num">10</div>
-<div class="gc-tag" style="color:#E8A317">Drying Science</div>
+<div class="gc-tag" style="color:#996A00">Drying Science</div>
 <h3>The Science of Structural Drying</h3>
 <p>Why "looks dry" isn't dry, the psychrometry of drying, and how moisture is actually measured.</p>
 <span class="gc-read">Read guide →</span>
@@ -192,7 +202,7 @@
 <span class="gc-read">Read guide →</span>
 </a><a class="guide-card" href="../field-guide-storm-response/"><div class="gc-thumb" style="background:linear-gradient(135deg,#C4860C,#9c6a09)"><svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true"><path d="M6 10a4 4 0 0 1 1-7 5 5 0 0 1 9 2 3 3 0 0 1-1 6H6zM11 14l-2 4M14 14l-2 4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 <div class="gc-num">19</div>
-<div class="gc-tag" style="color:#E8A317">Storm Response</div>
+<div class="gc-tag" style="color:#996A00">Storm Response</div>
 <h3>Storm Response: When Water Is Coming In</h3>
 <p>The real-time playbook for during and immediately after a major Bay Area storm.</p>
 <span class="gc-read">Read guide →</span>
