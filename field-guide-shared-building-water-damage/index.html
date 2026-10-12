@@ -138,8 +138,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <div class="aq-step" data-step="4">
 <div class="aq-eyebrow">Almost done — where should we send your assessment?</div>
 <h3 class="aq-q">Get your professional assessment &amp; response plan</h3>
-<form id="aqForm" action="https://formspree.io/f/mkoazalp" method="POST" class="aq-form">
-<input type="hidden" name="_subject" value="New Damage Assessment Lead">
+<form id="aqForm" action="https://api.web3forms.com/submit" method="POST" class="aq-form">
+<input type="hidden" name="access_key" value="05c7448a-ffcc-45fc-969c-c6b99398bd82"><input type="hidden" name="subject" value="New Damage Assessment Lead"><input type="checkbox" name="botcheck" style="display:none">
 <input type="hidden" name="damage_type" id="aqType">
 <input type="hidden" name="urgency" id="aqUrgency">
 <input type="hidden" name="area_size" id="aqArea">
@@ -160,8 +160,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <p class="aq-emergency-txt">For active emergencies, calling is fastest. Our team answers 24/7 and can dispatch a crew with a 60-minute response target.</p>
 <a href="tel:+14155295637" class="aq-callbtn aq-callbtn-lg">📞 Call Now: (415) 529-5637</a>
 <div class="aq-or">or leave your details and we'll call you right back</div>
-<form id="aqFormE" action="https://formspree.io/f/mkoazalp" method="POST" class="aq-form">
-<input type="hidden" name="_subject" value="🚨 URGENT Damage Assessment Lead">
+<form id="aqFormE" action="https://api.web3forms.com/submit" method="POST" class="aq-form">
+<input type="hidden" name="access_key" value="05c7448a-ffcc-45fc-969c-c6b99398bd82"><input type="hidden" name="subject" value="🚨 URGENT Damage Assessment Lead"><input type="checkbox" name="botcheck" style="display:none">
 <input type="hidden" name="damage_type" id="aqTypeE">
 <input type="hidden" name="urgency" value="EMERGENCY - happening now">
 <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
@@ -254,7 +254,7 @@ fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'applicatio
 </main>
 <footer class="ft"><div class="fi2"><div class="fb"><div style="font-family:var(--fh);font-size:18px;font-weight:700;color:#fff">Allied Restoration Company</div><a href="tel:+14155295637" style="font-size:20px;font-weight:700;color:#fff;display:block;margin-top:8px">(415) 529-5637</a></div>
 <div class="fc"><h4>Field Guides</h4><ul><li><a href="../field-guides/">All Guides</a></li><li><a href="../commercial-restoration-services/">Commercial</a></li></ul></div>
-<div class="fc"><h4>Company</h4><ul><li><a href="../company/">About</a></li><li><a href="../contact/">Contact</a></li></ul></div></div><div class="fb2"><p>© 2026 Allied Restoration Company.</p></div></footer>
+<div class="fc"><h4>Company</h4><ul><li><a href="../company/">About</a></li><li><a href="../contact/">Contact</a></li></ul></div></div><div class="fb2"><p>© 2026 Allied Restoration Company.</p></div><div style="text-align:center;padding:14px 0 4px;font-size:13px;opacity:.75"><a href="../privacy-policy/" style="color:inherit;margin:0 8px">Privacy Policy</a>|<a href="../eula/" style="color:inherit;margin:0 8px">EULA</a></div></footer>
 <script src="../js/main.js"></script><div id="arc-mobilebar" class="arc-mbar">
 <a href="tel:+14155295637" class="arc-mbar-btn arc-mbar-call" onclick="if(window.gtag)gtag('event','mobile_bar_call');">
 <span class="arc-mbar-ic">📞</span><span class="arc-mbar-tx">Call Now</span></a>
