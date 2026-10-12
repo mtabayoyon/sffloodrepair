@@ -70,10 +70,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <h3>Request a Professional Assessment</h3>
 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
 <input type="hidden" name="access_key" value="05c7448a-ffcc-45fc-969c-c6b99398bd82">
-  <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+  
   <input type="hidden" name="subject" value="New Service Request — Allied Restoration">
 
-<input type="hidden" name="redirect" value="https://www.sanfranciscofloodrepair.com/contact/?sent=true">
+
 <div class="fr">
 <div class="fg"><label for="fname">First Name*</label><input type="text" id="fname" name="first_name" required placeholder="John" aria-label="John"></div>
 <div class="fg"><label for="lname">Last Name*</label><input type="text" id="lname" name="last_name" required placeholder="Smith" aria-label="Smith"></div>
@@ -181,4 +181,31 @@ body{padding-bottom:56px!important}
 }
 </style>
 <script type="text/javascript" src="//cdn.callrail.com/companies/390935802/86e0afc571afd539c6ff/12/swap.js"></script>
+<script id="contactFormHandler">
+(function(){
+  var f=document.getElementById('contact-form');
+  if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('[type="submit"],button');
+    if(btn){btn.disabled=true;btn.textContent='Sending...';}
+    var data=new FormData(f);
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(j.success){
+          f.innerHTML='<div style="text-align:center;padding:40px 20px"><h3 style="color:#147D74;font-family:var(--fh);font-size:26px">✓ Thank you!</h3><p style="font-size:17px;color:#444">We received your request and will call you right back. For emergencies, call <a href="tel:+14155295637" style="color:#FF0000;font-weight:700">(415) 529-5637</a>.</p></div>';
+          if(window.gtag){gtag('event','generate_lead',{form:'contact'});}
+        } else {
+          alert('Something went wrong. Please call us at (415) 529-5637.');
+          if(btn){btn.disabled=false;btn.textContent='Send';}
+        }
+      })
+      .catch(function(){
+        alert('Something went wrong. Please call us at (415) 529-5637.');
+        if(btn){btn.disabled=false;btn.textContent='Send';}
+      });
+  });
+})();
+</script>
 </body></html>
