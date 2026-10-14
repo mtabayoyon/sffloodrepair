@@ -1,3 +1,49 @@
+# sanfranciscofloodrepair.com — North Bay Buildout (Marin · Sonoma · Napa)
+Build: 2026-10-14 · Scripts: `_build/engine.py`, `_build/pages.py`, `_build/links.py` (re-runnable; `_build/` is git-ignored)
+
+## Deploy
+1. GitHub Desktop → review changes → **Commit to main** → **Push origin**. No force push.
+2. After the deploy goes green, resubmit `https://www.sanfranciscofloodrepair.com/sitemap.xml` in Search Console.
+3. Request indexing in Search Console for `/water-damage-repair-petaluma/`, `/mold-inspection-san-rafael/`, `/north-bay-restoration/`.
+4. Point the Petaluma Google Business Profile website link at `/sonoma-county-restoration/` or `/restoration-services-petaluma/`.
+
+## What changed
+**Petaluma water page rebuilt** (`/water-damage-repair-petaluma/`, same URL): "water damage restoration petaluma" = 200/mo at ~$55 CPC.
+It was old-template, said "Petaluma, San Francisco", and had **1** internal link; now **59**. Google was ranking `/water-damage-napa/` for Petaluma.
+
+**11 new service pages** (Ahrefs US volume):
+| Page | Target | Vol |
+|---|---|---|
+| /mold-inspection-san-rafael/ | mold inspection san rafael | 200 |
+| /mold-removal-sausalito/ | mold removal sausalito | 90 |
+| /water-damage-restoration-sausalito/ | water damage (restoration) sausalito | 70 |
+| /mold-remediation-sonoma-county/ | mold remediation sonoma county | 60 |
+| /mold-remediation-san-anselmo/ | mold remediation san anselmo | 50 |
+| /mold-inspection-santa-rosa/ | mold inspection santa rosa | 50 |
+| /fire-damage-restoration-sonoma/ | fire damage restoration sonoma | 50 |
+| /fire-damage-restoration-healdsburg/ | fire damage restoration healdsburg | 40 |
+| /fire-damage-restoration-rohnert-park/ | fire damage restoration rohnert park | 40 |
+| /water-damage-restoration-larkspur/ | water damage larkspur | 30 |
+| /fire-damage-restoration-sonoma-county/ | fire damage restoration sonoma county | 10+ |
+
+**4 hubs:** /north-bay-restoration/, /marin-county-restoration/, /sonoma-county-restoration/, /napa-county-restoration/ — linked from /cities-we-serve/ and /restoration-services-petaluma/.
+
+**7 duplicate pages consolidated** (meta-refresh + canonical + noindex, same pattern as before) — none ranked in Ahrefs:
+santa-rosa-fire-damage-repair → fire-damage-restoration-santa-rosa · napa-fire-damage-clean-up-for-homes-and-businesses → fire-damage-restoration-napa ·
+napa-mold-cleanup-from-arc → mold-remediation-napa · water-damage-san-rafael → water-mitigation-san-rafael · arc-flood-damage-repair-marin → water-damage-restoration-marin-county ·
+marin-smoke-damage-repair-services → fire-restoration-marin-county · call-arc-for-water-damage-repair-american-canyon → water-damage-american-canyon.
+Plus 5 nested duplicates under /property-repair-services/ (Corte Madera, Larkspur, Belvedere mold; Santa Rosa fire; San Rafael sewage) now point to their root pages.
+
+**Retargets:** water-mitigation-san-rafael (title/H1 → "Water Damage Restoration San Rafael"), Mill Valley smoke page → fire damage, Mill Valley flood page → water damage.
+
+**45 existing North Bay pages** got a "More [County] Restoration Services" link block (county hub, North Bay hub, Petaluma water, new pages).
+**24 pages fixed** whose bottom banner said "Serving Santa Rosa 24/7" (Petaluma, Napa, San Rafael, Novato, Oakland, San Jose, etc.).
+**Sitemap rebuilt:** 600 canonical URLs — also picked up ~25 August city pages that were never added to sitemap.xml.
+
+Checks: 0 broken internal links, all JSON-LD valid, new-page similarity median 33% / max 60%.
+
+---
+
 # sanfranciscofloodrepair.com — Geo SEO Expansion + Cannibalization Repair
 Build: 2026-08-25 · Script: `fix_geo_20260825.py` (re-runnable)
 
