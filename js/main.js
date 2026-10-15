@@ -69,7 +69,7 @@ if(window.IntersectionObserver){
   });
 }
 
-// Contact form — Formspree → dispatch@teamallied.co
+// Contact form — Web3Forms → dispatch inbox
 var cf = document.getElementById('contact-form');
 if(cf){
   cf.addEventListener('submit', function(e){
@@ -79,10 +79,14 @@ if(cf){
     btn.textContent = 'Sending...';
     btn.disabled = true;
     var formData = new FormData(cf);
-    fetch('https://formspree.io/f/mkoazalp',{
+    formData.set('access_key','05c7448a-ffcc-45fc-969c-c6b99398bd82');
+    formData.set('subject','New Contact Form Lead — sanfranciscofloodrepair.com');
+    formData.append('page', location.pathname);
+    fetch('https://api.web3forms.com/submit',{
       method:'POST', body:formData, headers:{'Accept':'application/json'}
-    }).then(function(r){
+    }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok && j.success}; }); }).then(function(r){
       if(r.ok){
+        if(window.gtag){gtag('event','generate_lead',{form:'contact'});}
         btn.textContent = "✓ Message Sent! We'll call you within 30 minutes.";
         btn.style.background = '#008000';
         cf.reset();
@@ -109,12 +113,19 @@ document.querySelectorAll('.lead-form').forEach(form => {
     btn.disabled = true;
     try {
       const data = new FormData(form);
-      await fetch('https://formspree.io/f/xpwzgbjq', {method:'POST',body:data,headers:{'Accept':'application/json'}});
+      data.set('access_key','05c7448a-ffcc-45fc-969c-c6b99398bd82');
+      data.set('subject','New Assessment Request — sanfranciscofloodrepair.com');
+      data.append('page', location.pathname);
+      const r = await fetch('https://api.web3forms.com/submit', {method:'POST',body:data,headers:{'Accept':'application/json'}});
+      const j = await r.json();
+      if(!r.ok || !j.success) throw new Error(j.message || 'failed');
+      if(window.gtag){gtag('event','generate_lead',{form:'lead-form'});}
       form.querySelector('.lf-grid').style.display = 'none';
       if(success){ success.style.display='block'; }
     } catch(err) {
-      btn.textContent = 'Submit Assessment Request';
+      btn.textContent = 'Submission failed — please call (415) 529-5637';
       btn.disabled = false;
+      setTimeout(function(){ btn.textContent = 'Submit Assessment Request'; }, 5000);
     }
   });
 });
