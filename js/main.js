@@ -112,7 +112,7 @@ document.querySelectorAll('.lead-form').forEach(form => {
     btn.textContent = 'Sending...';
     btn.disabled = true;
     try {
-      const data = new FormData(form);
+            const data = new FormData(e.target.closest('form') || form.querySelector('form'));
       data.set('access_key','05c7448a-ffcc-45fc-969c-c6b99398bd82');
       data.set('subject','New Assessment Request — sanfranciscofloodrepair.com');
       data.append('page', location.pathname);
