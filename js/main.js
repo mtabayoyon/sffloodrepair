@@ -141,3 +141,34 @@ document.querySelectorAll('.lead-form').forEach(form => {
     bar.style.display = window.scrollY > heroBottom ? 'block' : 'none';
   }, {passive:true});
 })();
+
+// Copy every form lead to AlliedHub (n8n webhook). Runs alongside Web3Forms; never blocks the form.
+(function(){
+  var HOOK = 'https://app.alliedhub.co/webhook/web-lead';
+  try {
+    var q = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_term','gclid'].forEach(function(k){
+      if(q.get(k)) sessionStorage.setItem('ah_'+k, q.get(k));
+    });
+    if(!sessionStorage.getItem('ah_landing')){
+      sessionStorage.setItem('ah_landing', location.pathname);
+      sessionStorage.setItem('ah_referrer', document.referrer || '');
+    }
+  } catch(err){}
+  document.addEventListener('submit', function(e){
+    try {
+      var f = e.target; if(!f || f.tagName !== 'FORM') return;
+      var p = new URLSearchParams();
+      new FormData(f).forEach(function(v,k){ if(k !== 'access_key' && typeof v === 'string') p.append(k, v); });
+      p.set('site', location.hostname.replace(/^www\./,''));
+      p.set('form', f.id || f.className || 'form');
+      p.set('page', location.pathname);
+      ['utm_source','utm_medium','utm_campaign','utm_term','gclid','landing','referrer'].forEach(function(k){
+        var v = null; try { v = sessionStorage.getItem('ah_'+k); } catch(err){}
+        if(v) p.set(k, v);
+      });
+      if(navigator.sendBeacon && navigator.sendBeacon(HOOK, p)) return;
+      fetch(HOOK, {method:'POST', mode:'no-cors', keepalive:true, body:p});
+    } catch(err){}
+  }, true);
+})();
